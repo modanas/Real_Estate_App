@@ -8,7 +8,7 @@ const Testimonials = () => {
       <p className='text-center text-gray-500 mb-12 max-w-80 mx-auto'>Real Stories from Those Who Found Home with Us</p>
 
       <div className='flex flex-wrap justify-center gap-8'>
-        {testimonialsData.map((testimonial, index) => {
+        {testimonialsData.map((testimonial, index) => (
           <div key={index} className='max-w-[340px] border shadow-lg rounded px-8 py-12 text-center'>
             <img className="w-20 h-20 rounded-full mx-auto mb-4" src={testimonial.image} alt={testimonial.alt} />
             <h2 className='text-xl text-gray-700 font-medium'>{testimonial.name}</h2>
@@ -19,10 +19,10 @@ const Testimonials = () => {
                 <img key={index} src={assets.star_icon} alt="" />
               }))}
             </div>
-
+    
             <p className='text-gray-600'>{testimonial.text}</p>
           </div>
-        })}
+        ))}
       </div>
     </div>
   )
