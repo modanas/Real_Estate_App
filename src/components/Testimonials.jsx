@@ -15,10 +15,10 @@ const Testimonials = () => {
 
       <div className='flex flex-wrap justify-center gap-8'>
         {testimonialsData.map((testimonial, index) => (
-          <div key={index} className='max-w-[340px] border shadow-lg rounded px-8 py-12 text-center dark:bg-gray-800 dark:border-white'>
+          <div key={index} className='max-w-[340px] border shadow-lg rounded px-8 py-12 text-center'>
             <img className="w-20 h-20 rounded-full mx-auto mb-4" src={testimonial.image} alt={testimonial.alt} />
-            <h2 className='text-xl text-gray-700 font-medium dark:text-white'>{testimonial.name}</h2>
-            <p className='text-gray-500 mb-4 text-sm dark:text-gray-300'>{testimonial.title}</p>
+            <h2 className='text-xl text-gray-700 font-medium'>{testimonial.name}</h2>
+            <p className='text-gray-500 mb-4 text-sm'>{testimonial.title}</p>
 
             <div className='flex justify-center gap-1 text-red-500 mb-4'>
               {Array.from({length : testimonial.rating}, ((item, index) => {
@@ -26,7 +26,7 @@ const Testimonials = () => {
               }))}
             </div>
     
-            <p className='text-gray-600 dark:text-white'>{testimonial.text}</p>
+            <p className='text-gray-600'>{testimonial.text}</p>
           </div>
         ))}
       </div>

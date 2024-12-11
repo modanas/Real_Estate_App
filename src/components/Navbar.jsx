@@ -6,13 +6,13 @@ const Navbar = () => {
 	const [darkMode, setDarkMode] = useState(false);
 
 	// Apply the dark mode class to the body
-	useEffect(() => {
-		if (darkMode) {
-			document.body.classList.add("dark");
-		} else {
-			document.body.classList.remove("dark");
-		}
-	}, [darkMode]);
+	// useEffect(() => {
+	// 	if (darkMode) {
+	// 		document.body.classList.add("dark");
+	// 	} else {
+	// 		document.body.classList.remove("dark");
+	// 	}
+	// }, [darkMode]);
 
 	useEffect(() => {
 		if (showMobileMenu) {
@@ -46,13 +46,13 @@ const Navbar = () => {
 						Testimonials
 					</a>
 				</ul>
-				<button
+				{/* <button
 					onClick={() => setDarkMode(!darkMode)}
 					className="bg-gray-200 dark:bg-gray-800 text-black dark:text-white px-4 py-2 rounded-full"
 				>
 					{darkMode ? "Light" : "Dark"}
-				</button>
-				<button className="dark:bg-gray-800 dark:text-white text-black bg-white hidden md:block bg-white px-8 py-2 rounded-full">
+				</button> */}
+				<button className="text-black bg-white hidden md:block px-8 py-2 rounded-full">
 					Sign Up
 				</button>
 				<img
