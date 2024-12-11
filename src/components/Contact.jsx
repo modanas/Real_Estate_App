@@ -1,4 +1,6 @@
 import React from "react";
+import { toast } from "react-toastify";
+import { motion } from "framer-motion";
 
 const Contact = () => {
  const [result, setResult] = React.useState("");
@@ -19,18 +21,22 @@ const Contact = () => {
 
    if (data.success) {
      setResult("");
-     alert("Form Submitted Successfully");
+     toast.success("Form Submitted Successfully");
      event.target.reset();
    } else {
      console.log("Error", data);
-     alert(data.message);
+     toast.error(data.message);
      setResult("");
    }
  };
 
 
 	return (
-		<div
+		<motion.div
+    initial={{ opacity: 0, x : -200 }}
+    transition={{ duration: 1 }} 
+    whileInView={{ opacity: 1 , x : 0 }}
+    viewport={{ once: true }}
 			className="text-center p-6 py-20 lg:px-32 w-full overflow-hidden"
 			id="Contact"
 		>
@@ -44,25 +50,25 @@ const Contact = () => {
 
    <form onSubmit={onSubmit} className="max-w-2xl mx-auto text-gray-600 pt-8">
     <div className="flex flex-wrap">
-    <div className="w-full md:w-1/2 text-left">Your Name
-    <input type="text" placeholder="Your Name" name="Name" required className="border border-gray-300 rounded py-3 px-4 mt-2 w-full"/>
+    <div className="w-full md:w-1/2 text-left dark:text-white">Your Name
+    <input type="text" placeholder="Your Name" name="Name" required className="dark:bg-gray-800 border border-gray-300 rounded py-3 px-4 mt-2 w-full"/>
     </div>
 
-    <div className="w-full md:w-1/2 text-left md:pl-4">Your Email
-    <input type="email" placeholder="Your Email" name="Email" required className="border border-gray-300 rounded py-3 px-4 mt-2 w-full"/>
+    <div className="w-full md:w-1/2 text-left md:pl-4 dark:text-white">Your Email
+    <input type="email" placeholder="Your Email" name="Email" required className="dark:bg-gray-800 bg-white border border-gray-300 rounded py-3 px-4 mt-2 w-full"/>
     </div>
     </div>
 
-    <div className="my-6 text-left">
+    <div className="my-6 text-left dark:text-white">
      Message
-     <textarea name="Message" placeholder="Your Message" className="border border-gray-300 rounded py-3 px-4 mt-2 w-full h-48 resize-none" required></textarea>
+     <textarea name="Message" placeholder="Your Message" className="dark:bg-gray-800 border border-gray-300 rounded py-3 px-4 mt-2 w-full h-48 resize-none" required></textarea>
     </div>
 
     <button className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-12 rounded mb-10">{result ? result : "Send Message"}</button>
    </form>
 
 
-		</div>
+		</motion.div>
 	);
 };
 

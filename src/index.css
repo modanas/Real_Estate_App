@@ -7,3 +7,11 @@
 * {
  font-family: Outfit;
 }
+body.dark {
+ background-color: #1a202c;
+ color: #fff;
+}
+body {
+ background-color: #fff;
+ color : #1a202c;
+}
